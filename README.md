@@ -18,9 +18,9 @@ Aplikasi ini menerapkan pilar utama Pemrograman Berbasis Objek:
 
 Sebelum menjalankan aplikasi, pastikan komputer sudah terpasang prasyarat berikut:
 1. Java Development Kit (JDK 21 LTS):
-   * Download Eclipse Temurin JDK 21 (Adoptium): https://adoptium.net/temurin/releases/?version=21
+   * Download Eclipse Temurin JDK 21 (Adoptium): https://adoptium.net/temurin/releases/?version=21 (disarankan).
    * Download Oracle JDK 21: https://www.oracle.com/java/technologies/downloads/#java21
-2. Text Editor / IDE: Visual Studio Code (dengan extension Java) atau IDE lain seperti IntelliJ IDEA / Eclipse.
+2. Text Editor / IDE: Visual Studio Code (install Extension Pack for Java)
 3. Git: Untuk keperluan version control.
 
 ---
@@ -29,7 +29,7 @@ Sebelum menjalankan aplikasi, pastikan komputer sudah terpasang prasyarat beriku
 
 ### Cara 1: Menggunakan Visual Studio Code
 1. Clone repositori ke komputer lokal:
-   git clone https://github.com/username-kamu/HotelQta.git
+   git clone https://github.com/finaaprilia/HotelQta.git
 2. Buka folder proyek di Visual Studio Code.
 3. Buka file src/Main.java.
 4. Klik tombol Run (ikon Play di sudut kanan atas VS Code) atau tekan tombol F5.
