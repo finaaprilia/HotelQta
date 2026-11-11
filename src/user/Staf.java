@@ -1,5 +1,8 @@
 package user;
 
+/**
+ * Class abstrak untuk pegawai hotel (Resepsionis dan Admin).
+ */
 public abstract class Staf extends Pengguna {
     private String nip;
     private double gaji;

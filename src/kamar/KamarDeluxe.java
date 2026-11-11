@@ -1,10 +1,11 @@
 package kamar;
 
 public class KamarDeluxe extends Kamar {
+    private static final double TAMBAHAN_VIEW_LAUT = 150000; // per malam
     private boolean viewLaut;
 
-    public KamarDeluxe(String noKamar, double hargaDasar, int kapasitas, boolean viewLaut) {
-        super(noKamar, hargaDasar, kapasitas);
+    public KamarDeluxe(String nomorKamar, double hargaDasar, int kapasitas, boolean viewLaut) {
+        super(nomorKamar, hargaDasar, kapasitas);
         this.viewLaut = viewLaut;
     }
 
@@ -12,7 +13,7 @@ public class KamarDeluxe extends Kamar {
     public double hitungHarga(int malam) {
         double total = getHargaDasar() * malam;
         if (viewLaut) {
-            total += 150000 * malam;
+            total += TAMBAHAN_VIEW_LAUT * malam;
         }
         return total;
     }

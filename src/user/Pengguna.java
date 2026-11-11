@@ -1,5 +1,8 @@
 package user;
 
+/**
+ * Class abstrak induk untuk semua pengguna sistem (Tamu dan Staf).
+ */
 public abstract class Pengguna {
     private String id;
     private String nama;
@@ -16,12 +19,13 @@ public abstract class Pengguna {
     }
 
     public boolean login(String email, String password) {
-        return this.email.equals(email) && this.password.equals(password);
+        return this.email.equalsIgnoreCase(email) && this.password.equals(password);
     }
 
+    // Method abstrak: tiap subclass menentukan perannya sendiri (polymorphism)
     public abstract String getPeran();
 
-    // Getter dan Setter
+    // Getter dan Setter (encapsulation)
     public String getId() {
         return id;
     }
@@ -40,5 +44,9 @@ public abstract class Pengguna {
 
     public String getNoTelp() {
         return noTelp;
+    }
+
+    public void setNoTelp(String noTelp) {
+        this.noTelp = noTelp;
     }
 }
