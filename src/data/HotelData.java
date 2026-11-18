@@ -21,10 +21,13 @@ import user.Tamu;
 
 /**
  * Penyimpanan data in-memory + utilitas (bukan bagian dari class diagram domain).
+ * Polimorfisme: koleksi bertipe induk Pengguna dan Kamar menyimpan objek-objek
+ * subclass seperti Admin/Tamu dan KamarStandard/KamarDeluxe/KamarSuite.
  * Berfungsi sebagai "database" sederhana agar Tamu/Resepsionis/Admin dapat
  * mencari kamar dan reservasi berdasarkan id.
  */
 public final class HotelData {
+    // Abstraksi: gunakan kontrak List; polimorfisme: tipe induk dapat menyimpan objek subclass.
     private static final List<Pengguna> daftarPengguna = new ArrayList<>();
     private static final List<Kamar> daftarKamar = new ArrayList<>();
     private static final List<Reservasi> daftarReservasi = new ArrayList<>();

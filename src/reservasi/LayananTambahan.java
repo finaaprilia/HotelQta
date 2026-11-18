@@ -1,5 +1,9 @@
 package reservasi;
 
+/**
+ * Entitas layanan tambahan; data disembunyikan di field private dan diakses
+ * melalui method publik (enkapsulasi).
+ */
 public class LayananTambahan {
     private String namaLayanan;
     private double harga;

@@ -2,6 +2,7 @@ package pembayaran;
 
 import data.HotelData;
 
+/** Implementasi konkret Pembayaran untuk kartu kredit/debit (pewarisan). */
 public class PembayaranKartu extends Pembayaran {
     private String noKartu;
 
@@ -10,6 +11,7 @@ public class PembayaranKartu extends Pembayaran {
         this.noKartu = noKartu;
     }
 
+    // Override: validasi dan proses khusus pembayaran kartu.
     @Override
     public boolean proses(double jumlah) {
         // Validasi sederhana: nomor kartu harus 16 digit angka
@@ -25,6 +27,7 @@ public class PembayaranKartu extends Pembayaran {
         return true;
     }
 
+    // Override: mengembalikan identitas metode pembayaran konkret.
     @Override
     public String getMetode() {
         return "Kartu Kredit/Debit";

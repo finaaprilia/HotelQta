@@ -15,6 +15,7 @@ import user.Tamu;
  *  - Reservasi --memesan--> 1..* Kamar
  *  - Reservasi <>-- memiliki -- 0..* LayananTambahan (komposisi)
  *  - Reservasi --dibayar dengan--> 0..1 Pembayaran
+ * Mengimplementasikan kontrak pembatalan IDapatDibatalkan.
  */
 public class Reservasi implements IDapatDibatalkan {
     private String idReservasi;
@@ -25,6 +26,7 @@ public class Reservasi implements IDapatDibatalkan {
 
     private Tamu tamu;
     private List<Kamar> daftarKamar;
+    // Komposisi: layanan tambahan dicatat sebagai bagian dari reservasi.
     private List<LayananTambahan> daftarLayanan;
     private Pembayaran pembayaran; // 0..1
 
@@ -65,6 +67,7 @@ public class Reservasi implements IDapatDibatalkan {
         }
     }
 
+    // Override: memenuhi kontrak IDapatDibatalkan.
     @Override
     public boolean batalkan() {
         if (status.equalsIgnoreCase("Check-In") || status.equalsIgnoreCase("Selesai")
@@ -86,6 +89,7 @@ public class Reservasi implements IDapatDibatalkan {
      * Kebijakan refund (hanya jika sudah dibayar dan berstatus Dikonfirmasi):
      * H-3 atau lebih = 100%, H-1 sampai H-2 = 50%, selebihnya 0%.
      */
+    // Override: menyediakan kebijakan refund khusus reservasi hotel.
     @Override
     public double hitungRefund() {
         if (pembayaran == null || !pembayaran.getStatus().equalsIgnoreCase("Sukses")

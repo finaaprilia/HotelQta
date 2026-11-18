@@ -10,6 +10,7 @@ import kamar.KamarStandard;
 import kamar.KamarSuite;
 import reservasi.Reservasi;
 
+/** Subclass Staf dengan tanggung jawab pengelolaan hotel (pewarisan). */
 public class Admin extends Staf {
 
     public Admin(String id, String nama, String email, String noTelp, String password, String nip, double gaji) {
@@ -100,6 +101,7 @@ public class Admin extends Staf {
                 return;
             }
 
+            // Polimorfisme: satu referensi Kamar menampung berbagai subclass kamar.
             Kamar baru;
             switch (tipe) {
                 case "1" -> baru = new KamarStandard(nomor, harga, kapasitas);
@@ -168,6 +170,7 @@ public class Admin extends Staf {
         System.out.println("Status kamar " + k.getNomorKamar() + " sekarang: " + k.getStatus());
     }
 
+    // Override: Admin menentukan implementasi peran dari kontrak abstrak Pengguna.
     @Override
     public String getPeran() {
         return "Admin";

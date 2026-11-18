@@ -5,7 +5,8 @@ import kamar.Kamar;
 import reservasi.Reservasi;
 
 /**
- * Resepsionis. Relasi dependency: Resepsionis ..> Reservasi (memproses).
+ * Subclass Staf yang menangani proses check-in dan check-out (pewarisan).
+ * Relasi dependency: Resepsionis ..> Reservasi (memproses).
  */
 public class Resepsionis extends Staf {
 
@@ -53,6 +54,7 @@ public class Resepsionis extends Staf {
         return true;
     }
 
+    // Override: menentukan nilai peran untuk objek Resepsionis.
     @Override
     public String getPeran() {
         return "Resepsionis";

@@ -1,7 +1,8 @@
 package user;
 
 /**
- * Class abstrak untuk pegawai hotel (Resepsionis dan Admin).
+ * Class abstrak antara Pengguna dan pegawai hotel.
+ * Mewarisi identitas umum dari Pengguna dan menambahkan data khusus staf.
  */
 public abstract class Staf extends Pengguna {
     private String nip;

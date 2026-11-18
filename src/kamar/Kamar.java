@@ -1,5 +1,9 @@
 package kamar;
 
+/**
+ * Class abstrak induk tipe kamar (abstraksi dan pewarisan).
+ * Subclass wajib menentukan perhitungan harga dan fasilitasnya sendiri.
+ */
 public abstract class Kamar {
     private String nomorKamar;
     private double hargaDasar;
@@ -17,7 +21,7 @@ public abstract class Kamar {
         return this.status.equalsIgnoreCase("Tersedia");
     }
 
-    // Method abstrak: dihitung/diisi berbeda oleh tiap tipe kamar (polymorphism)
+    // Kontrak abstrak: implementasi subclass dipilih saat runtime (polimorfisme).
     public abstract double hitungHarga(int malam);
 
     public abstract String getFasilitas();

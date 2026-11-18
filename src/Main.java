@@ -17,7 +17,9 @@ import user.Resepsionis;
 import user.Tamu;
 
 /**
- * Titik masuk aplikasi (CLI). Alur: login -> menu sesuai peran (Tamu / Resepsionis / Admin).
+ * Titik masuk aplikasi (CLI).
+ * Contoh polimorfisme: alur aplikasi memakai tipe umum Pengguna, Kamar, dan
+ * Pembayaran, sementara perilaku konkretnya ditentukan oleh objek turunannya.
  */
 public class Main {
     private static final Scanner INPUT = HotelData.getScanner();
@@ -54,6 +56,7 @@ public class Main {
         String email = bacaTeks("Email    : ");
         String password = bacaTeks("Password : ");
 
+        // Polimorfisme: variabel bertipe Pengguna dapat merujuk ke Tamu, Resepsionis, atau Admin.
         Pengguna pengguna = HotelData.login(email, password);
         if (pengguna == null) {
             System.out.println("Login gagal: email atau password salah.");
@@ -244,6 +247,7 @@ public class Main {
         System.out.println("3. E-Wallet (GoPay/OVO/ShopeePay)");
         int pilih = bacaInt("Pilih metode (1-3): ");
 
+        // Polimorfisme: referensi Pembayaran menyimpan salah satu objek metode pembayaran konkret.
         Pembayaran pembayaran;
         String idBayar = HotelData.generateIdPembayaran();
         switch (pilih) {

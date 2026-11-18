@@ -8,7 +8,8 @@ import kamar.Kamar;
 import reservasi.Reservasi;
 
 /**
- * Tamu hotel. Relasi: Tamu 1 --membuat--> 0..* Reservasi.
+ * Subclass Pengguna dengan data dan perilaku khusus tamu hotel (pewarisan).
+ * Relasi: Tamu 1 --membuat--> 0..* Reservasi.
  */
 public class Tamu extends Pengguna {
     private String noIdentitas;
@@ -66,6 +67,7 @@ public class Tamu extends Pengguna {
         this.poinLoyalitas += poin;
     }
 
+    // Override: menentukan nilai peran untuk objek Tamu.
     @Override
     public String getPeran() {
         return "Tamu";

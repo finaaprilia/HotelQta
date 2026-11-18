@@ -2,6 +2,7 @@ package user;
 
 /**
  * Class abstrak induk untuk semua pengguna sistem (Tamu dan Staf).
+ * Field private menerapkan enkapsulasi; getPeran() menjadi kontrak bagi subclass.
  */
 public abstract class Pengguna {
     private String id;
@@ -22,7 +23,7 @@ public abstract class Pengguna {
         return this.email.equalsIgnoreCase(email) && this.password.equals(password);
     }
 
-    // Method abstrak: tiap subclass menentukan perannya sendiri (polymorphism)
+    // Abstraksi: subclass wajib menyediakan peran; pemanggilan melalui Pengguna bersifat polimorfik.
     public abstract String getPeran();
 
     // Getter dan Setter (encapsulation)

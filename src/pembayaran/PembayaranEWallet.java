@@ -2,6 +2,7 @@ package pembayaran;
 
 import data.HotelData;
 
+/** Implementasi konkret Pembayaran untuk metode E-Wallet (pewarisan). */
 public class PembayaranEWallet extends Pembayaran {
     private String provider;
 
@@ -10,6 +11,7 @@ public class PembayaranEWallet extends Pembayaran {
         this.provider = provider;
     }
 
+    // Override: proses pembayaran E-Wallet berbeda dari metode lainnya.
     @Override
     public boolean proses(double jumlah) {
         if (jumlah <= 0 || provider == null || provider.isBlank()) {
@@ -24,6 +26,7 @@ public class PembayaranEWallet extends Pembayaran {
         return true;
     }
 
+    // Override: mengembalikan identitas metode pembayaran konkret.
     @Override
     public String getMetode() {
         return "E-Wallet (" + provider + ")";

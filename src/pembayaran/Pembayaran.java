@@ -2,6 +2,10 @@ package pembayaran;
 
 import java.util.Date;
 
+/**
+ * Class abstrak dasar pembayaran: menerapkan kontrak IPembayaran dan mewariskan
+ * data umum ke setiap metode pembayaran konkret.
+ */
 public abstract class Pembayaran implements IPembayaran {
     private String idPembayaran;
     private double jumlah;
@@ -14,11 +18,11 @@ public abstract class Pembayaran implements IPembayaran {
         this.status = "Pending";
     }
 
-    // Dideklarasikan ulang sebagai abstract agar sesuai diagram;
-    // implementasinya ada di PembayaranTunai/Kartu/EWallet (polymorphism)
+    // Implementasi ditunda ke subclass; pemanggilan melalui Pembayaran bersifat polimorfik.
     @Override
     public abstract boolean proses(double jumlah);
 
+    // Override kontrak interface; implementasi konkret disediakan oleh subclass.
     @Override
     public abstract String getMetode();
 

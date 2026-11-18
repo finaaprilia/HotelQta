@@ -1,5 +1,6 @@
 package kamar;
 
+/** Subclass Kamar yang mewarisi data/perilaku umum dan menambahkan opsi view laut. */
 public class KamarDeluxe extends Kamar {
     private static final double TAMBAHAN_VIEW_LAUT = 150000; // per malam
     private boolean viewLaut;
@@ -9,6 +10,7 @@ public class KamarDeluxe extends Kamar {
         this.viewLaut = viewLaut;
     }
 
+    // Override: mengganti implementasi harga milik kontrak abstrak Kamar.
     @Override
     public double hitungHarga(int malam) {
         double total = getHargaDasar() * malam;
@@ -18,6 +20,7 @@ public class KamarDeluxe extends Kamar {
         return total;
     }
 
+    // Override: fasilitas khusus kamar Deluxe.
     @Override
     public String getFasilitas() {
         return "King Bed, AC, Wi-Fi, Smart TV, Balkon" + (viewLaut ? " (View Laut)" : "");
